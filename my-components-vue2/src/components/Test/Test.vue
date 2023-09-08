@@ -1,11 +1,18 @@
 <template>
   <div>
-    我是Test组件
+    {{text}}
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VTest'
+  name: 'VTest',
+  props: {
+    text: {
+      type: String,
+      default: '我是Test组件'
+    }
+  }
 }
 </script>
