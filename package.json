@@ -1,0 +1,24 @@
+{
+  "name": "single-spa-default",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm-run-all --serial install:*",
+    "serve": "npm-run-all --parallel serve:*",
+    "install:my-root": "cd my-root && pnpm",
+    "serve:my-root": "cd my-root && pnpm serve",
+    "install:my-vue2": "cd my-vue2 && pnpm",
+    "serve:my-vue2": "cd my-vue2 && pnpm serve",
+    "install:my-vue3": "cd my-vue3 && pnpm",
+    "serve:my-vue3": "cd my-vue3 && pnpm serve",
+    "install:my-react": "cd my-react && pnpm",
+    "serve:my-react": "cd my-react && pnpm serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
