@@ -26,6 +26,7 @@ pnpm serve
 ```
 1. 该项目使用的是最新的vue-cli，新版本内置了webpack@5.54以上，老版本一般是webpack4或者webpack5的bate版，则需要另外去解决，一般是配合vue-loader等插件
 2. 由于模块联邦导出组件是异步的，所以在子应用中加载组件时需要在single-spa及new vue之前加载，写法上有些不优雅，如果有好的想法，可以联系我讨论一下
+3. 由于webpack5得原因，单独开发的话需要设置IS_ROOT为true，并且必须移除shared和exposes（已做配置），shared会导致找不到依赖无法启动，exposes会导致本地开发没有热更新（并报错）
 ```
 
 ## 待完善

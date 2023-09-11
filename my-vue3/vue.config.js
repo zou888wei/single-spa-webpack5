@@ -24,23 +24,23 @@ const MFT = () => {
       exposes: {
         // 将整个应用暴露出去
         './app': path.resolve(__dirname, 'src/main.ts')
-      },
-      shared: {
-        vue: {
-          requiredVersion: '^3.2.13',
-          singleton: true
-        },
-        'vue-router': {
-          requiredVersion: '^4.0.3',
-          singleton: true
-        },
-        'core-js': {
-          singleton: true
-        },
-        'single-spa-vue': {
-          singleton: true
-        }
       }
+      // shared: {
+      //   vue: {
+      //     requiredVersion: '^3.2.13',
+      //     singleton: true
+      //   },
+      //   'vue-router': {
+      //     requiredVersion: '^4.0.3',
+      //     singleton: true
+      //   },
+      //   'core-js': {
+      //     singleton: true
+      //   },
+      //   'single-spa-vue': {
+      //     singleton: true
+      //   }
+      // }
     })
   }
   return obj
