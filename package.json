@@ -13,7 +13,13 @@
     "install:my-vue3": "cd my-vue3 && pnpm",
     "serve:my-vue3": "cd my-vue3 && pnpm serve",
     "install:my-react": "cd my-react && pnpm",
-    "serve:my-react": "cd my-react && pnpm serve"
+    "serve:my-react": "cd my-react && pnpm serve",
+    "install:my-components-vue2": "cd my-components-vue2 && pnpm",
+    "serve:my-components-vue2": "cd my-components-vue2 && pnpm serve",
+    "install:my-components-vue3": "cd my-components-vue3 && pnpm",
+    "serve:my-components-vue3": "cd my-components-vue3 && pnpm serve",
+    "install:my-components-react": "cd my-components-react && pnpm",
+    "serve:my-components-react": "cd my-components-react && pnpm serve"
   },
   "keywords": [],
   "author": "",

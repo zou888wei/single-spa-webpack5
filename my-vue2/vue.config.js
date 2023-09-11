@@ -63,10 +63,6 @@ module.exports = defineConfig({
     }
   },
   configureWebpack: {
-    // output: {
-    //   library: pkg.name,
-    //   libraryTarget: 'umd'
-    // }
     optimization: {
       splitChunks: false
     },

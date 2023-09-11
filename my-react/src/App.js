@@ -4,7 +4,7 @@ import RouterView from '@/router'
 
 function App() {
   const isSingleSpa = useMemo(() => !!window.singleSpaNavigate, [])
-  console.log(isSingleSpa)
+
   return (
     <div className="App">
       <Router>
