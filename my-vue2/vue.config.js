@@ -8,6 +8,44 @@ const pkgName = pkg.name.replace(/-/g, '_')
 const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH
 const COMPONENTS_VUE2_PATH = process.env.VUE_APP_MODULE_COMPONENTS_VUE2
 
+// 设定是否主应用
+const IS_ROOT = process.env.VUE_APP_IS_ROOT === 'true'
+
+const MFT = () => {
+  const obj = {
+    name: pkgName,
+    remotes: {
+      my_components_vue2: `my_components_vue2@${COMPONENTS_VUE2_PATH}/remote-entry.js`
+    }
+  }
+  if (!IS_ROOT) {
+    Object.assign(obj, {
+      filename: 'remote-entry.js',
+      exposes: {
+        // 将整个应用暴露出去
+        './app': path.resolve(__dirname, 'src/main.js')
+      },
+      shared: {
+        vue: {
+          requiredVersion: '^2.6.14',
+          singleton: true
+        },
+        'vue-router': {
+          requiredVersion: '^3.5.1',
+          singleton: true
+        },
+        'core-js': {
+          singleton: true
+        },
+        'single-spa-vue': {
+          singleton: true
+        }
+      }
+    })
+  }
+  return obj
+}
+
 module.exports = defineConfig({
   transpileDependencies: true,
   productionSourceMap: false,
@@ -33,21 +71,7 @@ module.exports = defineConfig({
       splitChunks: false
     },
     plugins: [
-      new ModuleFederationPlugin({
-        name: pkgName,
-        filename: 'remote-entry.js',
-        exposes: {
-          './app': path.resolve(__dirname, 'src/main.js')
-        },
-        remotes: {
-          my_components_vue2: `my_components_vue2@${COMPONENTS_VUE2_PATH}/remote-entry.js`
-        },
-        shared: [
-          // 'vue',
-          // 'vue-router',
-          // 'core-js'
-        ]
-      })
+      new ModuleFederationPlugin(MFT())
     ]
   }
 })

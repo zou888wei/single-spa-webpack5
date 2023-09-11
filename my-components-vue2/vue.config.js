@@ -38,9 +38,9 @@ module.exports = defineConfig({
         //   common: COMMON_PATH ? `common@${COMMON_PATH}/remote-entry.js` : 'common'
         // },
         shared: [
-          // 'vue',
+          'vue',
           // 'vue-router',
-          // 'core-js'
+          'core-js'
         ]
       })
     ]

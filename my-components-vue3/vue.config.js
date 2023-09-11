@@ -39,7 +39,12 @@ module.exports = defineConfig({
         filename: 'remote-entry.js',
         exposes: {
           ...ModuleFederationComponents
-        }
+        },
+        shared: [
+          'vue',
+          // 'vue-router',
+          'core-js'
+        ]
       })
     ]
   }
