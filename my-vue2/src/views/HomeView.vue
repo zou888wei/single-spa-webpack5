@@ -16,9 +16,6 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     // VTest: () => import('my_components_vue2/VTest'),
     HelloWorld
-  },
-  created() {
-    console.log(this)
   }
 }
 </script>

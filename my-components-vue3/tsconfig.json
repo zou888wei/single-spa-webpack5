@@ -10,13 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
-    "resolveJsonModule": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": "./",
     "types": [
       "webpack",
       "webpack-env",
-      "vue-router"
+      "unplugin-vue-define-options"
     ],
     "paths": {
       "@/*": [
@@ -32,12 +31,10 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "src/plugins/*.js"
+    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules"

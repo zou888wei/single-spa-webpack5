@@ -1,12 +1,12 @@
-const path = require('path')
 const { defineConfig } = require('@vue/cli-service')
 const { ModuleFederationPlugin } = require('webpack').container
+
+const ModuleFederationComponents = require('./scripts/ModuleFederationComponents')
 
 const pkg = require('./package.json')
 const pkgName = pkg.name.replace(/-/g, '_')
 
 const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH
-const COMPONENTS_VUE3_PATH = process.env.VUE_APP_MODULE_COMPONENTS_VUE3
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -33,20 +33,13 @@ module.exports = defineConfig({
       splitChunks: false
     },
     plugins: [
+      require('unplugin-vue-define-options/webpack')(),
       new ModuleFederationPlugin({
         name: pkgName,
         filename: 'remote-entry.js',
         exposes: {
-          './app': path.resolve(__dirname, 'src/main.ts')
-        },
-        remotes: {
-          my_components_vue3: `my_components_vue3@${COMPONENTS_VUE3_PATH}/remote-entry.js`
-        },
-        shared: [
-          // 'vue',
-          // 'vue-router',
-          // 'core-js'
-        ]
+          ...ModuleFederationComponents
+        }
       })
     ]
   }
