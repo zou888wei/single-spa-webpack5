@@ -5,7 +5,7 @@ const { ModuleFederationPlugin } = require('webpack').container
 const pkg = require('./package.json')
 const pkgName = pkg.name.replace(/-/g, '_')
 
-const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH
+const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH || 'auto'
 const COMPONENTS_VUE3_PATH = process.env.VUE_APP_MODULE_COMPONENTS_VUE3
 
 // 设定是否主应用

@@ -6,7 +6,7 @@ const ModuleFederationComponents = require('./scripts/ModuleFederationComponents
 const pkg = require('./package.json')
 const pkgName = pkg.name.replace(/-/g, '_')
 
-const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH
+const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH || 'auto'
 
 module.exports = defineConfig({
   transpileDependencies: true,

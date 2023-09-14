@@ -14,7 +14,7 @@ const pkgName = pkg.name.replace(/-/g, '_')
 // 修改默认打包目录build，改为与vue统一目录dist
 paths.appBuild = path.join(path.dirname(paths.appBuild), 'dist')
 
-const PUBLIC_PATH = process.env.REACT_APP_PUBLIC_PATH
+const PUBLIC_PATH = process.env.REACT_APP_PUBLIC_PATH || 'auto'
 
 module.exports = override(
   // 路径别名

@@ -5,7 +5,7 @@ const { ModuleFederationPlugin } = require('webpack').container
 
 const ModuleFederationComponents = require('./scripts/ModuleFederationComponents')
 
-const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH
+const PUBLIC_PATH = process.env.VUE_APP_PUBLIC_PATH || 'auto'
 
 module.exports = defineConfig({
   transpileDependencies: true,
