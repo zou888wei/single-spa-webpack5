@@ -30,7 +30,7 @@ pnpm serve
 
 3. 由于webpack5得原因，单独开发的话需要设置IS_ROOT为true，并且必须移除shared和exposes（已做配置），shared会导致找不到依赖无法启动，exposes会导致本地开发没有热更新并报错，线上应该不会报错，自行测试
 
-4. 生产环境下publicPath视情况更改，本地没测试过，一般来说不用管
+4. 生产环境下publicPath视情况更改，没测试过，一般来说不用改的
 ```
 
 ## 待完善
